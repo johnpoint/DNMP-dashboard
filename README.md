@@ -14,6 +14,13 @@ wget https://raw.githubusercontent.com/johnpoint/DNMP-dashboard/master/setup.sh 
 
 > TODO
 
+# TODO
+
+-[] 完善安装脚本
+-[] 扫描数据库自动生成监控配置文件
+-[] 自动重启监控
+-[] 导出/导入 服务器数据 
+
 # THANKS
 
 - [BotoX/ServerStatus](https://github.com/BotoX/ServerStatus)
