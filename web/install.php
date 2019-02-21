@@ -46,9 +46,29 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "创建数据表错误: " . $conn->error;
 }
+
+$sql = "CREATE TABLE status (
+    username varchar(20) CHARACTER SET utf8mb4 NOT NULL,
+    name varchar(20) CHARACTER SET utf8mb4 NOT NULL,
+    type varchar(20) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'UNKOWN',
+    host varchar(30) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'UNKOWN',
+    location varchar(20) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'UNKOWN',
+    password varchar(20) CHARACTER SET utf8mb4 NOT NULL DEFAULT '1234'
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+if ($conn->query($sql) === TRUE) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "创建数据表错误: " . $conn->error;
+}
+
 $sql = "INSERT INTO settings (id, name, data, data2) VALUES
 (1, 'usercookie', '".md5('adminadmin'.$salt)."', ''),
 (13, 'secret', '0', NULL)";
+if ($conn->query($sql) === TRUE) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "创建数据表错误: " . $conn->error;
+}
 
 $conn->close();
 echo "安装完成";
