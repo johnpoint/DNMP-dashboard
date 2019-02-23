@@ -39,7 +39,7 @@ echo '<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css
                             <th id="network">Network ↓|↑</th>
                             <th id="cpu">CPU</th>
                             <th id="ram">RAM</th>
-                            <th id="disk">HDD</th>
+                            <th id="hdd">disk</th>
                         </tr>
                     </thead>
                     <tbody id="servers">
