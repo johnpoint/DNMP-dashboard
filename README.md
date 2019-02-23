@@ -24,6 +24,7 @@ wget https://raw.githubusercontent.com/johnpoint/DNMP-dashboard/master/setup.sh 
 # THANKS
 
 - [BotoX/ServerStatus](https://github.com/BotoX/ServerStatus)
+- [zdhxiong/mdui](https://github.com/zdhxiong/mdui)
 
 # LICENSE
 
