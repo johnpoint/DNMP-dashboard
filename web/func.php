@@ -99,7 +99,7 @@ function serverDbView($name){
       $info['proxy'] = $row['proxy'];
       array_push($data['info'],$info);
     }
-    $data['num'] = $num;
+    $data['num'] = $num + 1;
     return $data;
   } else {
     return '{"code":"1"}';

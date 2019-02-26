@@ -22,7 +22,7 @@ if ( $vcode == 1) {
       <th>mysql</th>
       <th>proxy</th>
     </tr></thead><tbody>';
-    for($i = 0;$i <= $info['num'];$i++){
+    for($i = 0;$i < $info['num'];$i++){
         $j = 0;
         echo '<tr><td id='.$i.$j.'>'.$info['info'][$i]['id'].'</td>';$j++;
         echo '<td id='.$i.$j.'>'.$info['info'][$i]['ipv4'].'</td>';$j++;

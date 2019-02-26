@@ -9,7 +9,7 @@ echo '  <div class="mdui-container doc-container doc-no-cover">
     <div class="mdui-row-xs-2">
   <div class="mdui-col">
   <h1>服务器</h1>
-        <h2>'.$info['num']+1.'台</h2>
+        <h2>'.$info['num'].'台</h2>
   </div>
   <div class="mdui-col">
     <h1>证书</h1>
