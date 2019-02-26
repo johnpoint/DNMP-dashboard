@@ -6,6 +6,12 @@ echo '<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/dark.css" title="dark">
 <link rel="stylesheet" href="css/light.css" title="light">
+<style>
+			body {
+				padding-top: 70px;
+				padding-bottom: 30px;
+			}
+		</style>
 </style>
 <div class="mdui-container doc-container doc-no-cover">
     <h1 class="doc-title mdui-text-color-theme">服务器管理面板 - 监控</h1>
