@@ -4,6 +4,7 @@ include_once 'verify.php';
 if ( $vcode == 1) {
 echo '<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/dark.css" title="dark">
 <link rel="stylesheet" href="css/light.css" title="light">
 </style>
 <div class="mdui-container doc-container doc-no-cover">
@@ -52,7 +53,12 @@ echo '<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css
             <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
             <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
             <script src="js/serverstatus.js"></script>
-            <script type="text/javascript">setActiveStyleSheet(\'light\');
+            <script>
+                if ($(\'.mdui-theme-layout-dark\').length == 0){
+                    setActiveStyleSheet(\'light\');
+                } else {
+                    setActiveStyleSheet(\'dark\');
+                }
             </script>
         </div>
     </div>
