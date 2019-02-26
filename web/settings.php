@@ -47,16 +47,6 @@ if ( $vcode == 1) {
                     </div>
                 </div>
             </div>
-            <div class="mdui-panel" mdui-panel>
-                <div class="mdui-panel-item">
-                    <div class="mdui-panel-item-header">授权码</div>
-                    <div class="mdui-panel-item-body">
-                        <p id=\'onepass\'></p>
-                        <div class="mdui-panel-item-actions">
-                            <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="addonepassb">add</button>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="mdui-panel" mdui-panel>
                 <div class="mdui-panel-item">
@@ -86,25 +76,6 @@ if ( $vcode == 1) {
                     </div>
                 </div>
 
-                <div class="mdui-dialog" id="addonepassw">
-                    <div class="mdui-dialog-title">添加授权码</div>
-                    <div class="mdui-dialog-content">
-                        <p>授权码由授权码以及校验码组成</p>
-                        <form>
-                            <div class="mdui-textfield mdui-textfield-floating-label">
-                                <label class="mdui-textfield-label">校验码</label>
-                                <input class="mdui-textfield-input" type="text" id="addonepassv" />
-                            </div>
-                            <div class="mdui-textfield mdui-textfield-floating-label">
-                                <label class="mdui-textfield-label">授权码</label>
-                                <input class="mdui-textfield-input" type="text" id="addonepass" />
-                            </div>
-                        </form>
-                        <div class="mdui-dialog-actions">
-                            <button class="mdui-btn mdui-ripple" id="saveonepass">save</button>
-                        </div>
-                    </div>
-                </div>
 
                 <script type="text/javascript">
                     var a = function () {
@@ -114,16 +85,6 @@ if ( $vcode == 1) {
                             data: { mod: "view", name: "usercookie" },
                             success: function (data) {
                                 document.getElementById("cookie").innerHTML = data;
-                            }
-                        })
-                    };
-                    var b = function () {
-                        $.ajax({
-                            url: "db.php",
-                            method: "POST",
-                            data: { mod: "view", name: "onepass" },
-                            success: function (data) {
-                                document.getElementById("onepass").innerHTML = data;
                             }
                         })
                     };
@@ -138,7 +99,6 @@ if ( $vcode == 1) {
                         })
                     };
                     a();
-                    b();
                     c();
                     function c() {
                         document.getElementById("cookie").innerHTML = \'请重新登陆\';
@@ -149,9 +109,6 @@ var onpass = new mdui.Dialog(\'#addonepassw\');
 var editsecret = new mdui.Dialog(\'#editsecretwindow\');
 document.getElementById("openedit").onclick = function () {
                             edit.open();
-                        }
-document.getElementById("addonepassb").onclick = function () {
-                            onpass.open();
                         }
                         document.getElementById("editsecret").onclick = function () {
                             editsecret.open();

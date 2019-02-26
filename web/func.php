@@ -19,11 +19,7 @@ function settingsDbEdit($mod,$name,$do,$data){
     $result = $conn->query($query);
     if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        if ($row['data2'] != '') {
-        return $row["data"].'  /  '.$row["data2"].'<br>';
-        } else {
         return $row['data'];
-        }
       }
     } else {
       return "0 结果";
@@ -37,11 +33,6 @@ function settingsDbEdit($mod,$name,$do,$data){
     $update->bind_param("ss", $value, $name);
     $returndata = $update->execute();
     $update->close();
-    return $returndata;
-  } elseif ($_POST['mod'] == 'add') {
-    $insert->bind_param("sss", $name, $data[0], $data[1]);
-    $returndata=$insert->execute();
-    $insert->close();
     return $returndata;
   }
   $conn->close();
