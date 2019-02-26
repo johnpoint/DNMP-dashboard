@@ -7,6 +7,9 @@ if ( $vcode == 1) {
     <h1 class="doc-title mdui-text-color-theme">服务器管理面板 - 管理</h1>
     <div class="doc-chapter">
       <div class="mdui-typo">
+      <div class="mdui-chip">
+      <span class="mdui-chip-title">注册服务器: curl "https://'.settingsDbEdit('view','dom',NULL,NULL).'/api.php?do=reg&secret='.settingsDbEdit('view','secret',NULL,NULL).'&ip=$(curl ip.sb -4)&hostname=$(hostname)&ipv6=$(curl ip.sb -6)"</span>
+      </div>
       <div style="display: none;" id="nonediv">'.settingsDbEdit('view','secret',NULL,NULL).'</div>
       <div id="serverinfo"></div>';
     $info = serverDbView('*');
