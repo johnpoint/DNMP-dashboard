@@ -18,7 +18,7 @@ mysqli_close($conn);
 $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 if ($conn->connect_error) {
     die("连接失败: " . $conn->connect_error);
-} 
+}
 $sql = "CREATE TABLE servers (
     id int(11) NOT NULL,
     hostname text CHARACTER SET utf8mb4 NOT NULL,
@@ -62,7 +62,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $sql = "INSERT INTO settings (id, name, data, data2) VALUES
-(1, 'usercookie', '".md5('adminadmin'.$salt)."', ''),
+(1, 'usercookie', '" . md5('adminadmin' . $salt) . "', ''),
 (13, 'secret', '0', NULL)";
 if ($conn->query($sql) === TRUE) {
     echo "Table MyGuests created successfully";

@@ -9,9 +9,9 @@ $query = "SELECT data FROM settings WHERE name='usercookie'";
 $result = $conn->query($query);
 $row = mysqli_fetch_assoc($result);
 if ($_COOKIE['user'] == $row["data"]) {
-  $vcode = 1;
+    $vcode = 1;
 } else {
-  echo '<script type="text/javascript">
+    echo '<script type="text/javascript">
 function error(){
   mdui.snackbar({
     message: \'用户状态异常\',
@@ -21,4 +21,4 @@ function error(){
 error();
 </script>';
 }
- ?>
+?>

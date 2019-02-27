@@ -2,30 +2,30 @@
 include_once 'config.php';
 include_once 'verify.php';
 include_once 'func.php';
-if ( $vcode == 1) {
-  echo '<div class="mdui-container doc-container doc-no-cover">
+if ($vcode == 1) {
+    echo '<div class="mdui-container doc-container doc-no-cover">
     <h1 class="doc-title mdui-text-color-theme">服务器管理面板 - 证书分发</h1>
     <div class="doc-chapter">
       <div class="mdui-typo">';
     echo '<div class="mdui-panel" mdui-panel>';
-    function listDir($dir,$cookie)
+    function listDir($dir, $cookie)
     {
         if (is_dir($dir)) {
             if ($dh = opendir($dir)) {
                 while (($file = readdir($dh)) !== false) {
-                    if (is_dir($dir."/".$file) && $file!="." && $file!="..") {
+                    if (is_dir($dir . "/" . $file) && $file != "." && $file != "..") {
                         echo '<div class="mdui-panel-item">';
-                        echo '<div class="mdui-panel-item-header">'.$file.'</div>';
+                        echo '<div class="mdui-panel-item-header">' . $file . '</div>';
                         echo '<div class="mdui-panel-item-body">';
-                        listDir($dir."/".$file,$cookie);
+                        listDir($dir . "/" . $file, $cookie);
                     } else {
                         if ($file != "." && $file != ".." && $file != "synccer.sh") {
                             echo '<div class="mdui-panel" mdui-panel>';
                             echo '<div class="mdui-panel-item">';
-                            echo '<div class="mdui-panel-item-header">'.'<div class="mdui-panel-item-title">'.$file.'</div>'.'<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>'.'</div>';
+                            echo '<div class="mdui-panel-item-header">' . '<div class="mdui-panel-item-title">' . $file . '</div>' . '<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>' . '</div>';
                             echo '<div class="mdui-panel-item-body">';
-                            echo '<pre> curl https://center.lvcshu.com/getcerfile.php?secret='.settingsDbEdit('view','secret',NULL,NULL).'&fulldir='.$dir.'/'.$myfile.$file.' > $file </pre>';
-                            echo "<a href=".'\'https://center.lvcshu.com/getcerfile.php?secret='.settingsDbEdit('view','secret',NULL,NULL).'&fulldir='.$dir.'/'.$myfile.$file."'".'class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">View</a>';
+                            echo '<pre> curl https://center.lvcshu.com/getcerfile.php?secret=' . settingsDbEdit('view', 'secret', NULL, NULL) . '&fulldir=' . $dir . '/' . $myfile . $file . ' > $file </pre>';
+                            echo "<a href=" . '\'https://center.lvcshu.com/getcerfile.php?secret=' . settingsDbEdit('view', 'secret', NULL, NULL) . '&fulldir=' . $dir . '/' . $myfile . $file . "'" . 'class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">View</a>';
                             echo '</div></div>';
                         }
                     }
@@ -37,7 +37,8 @@ if ( $vcode == 1) {
             echo $dir . '<br>';
         }
     }
-    listDir("ssl",$usercookie);
+
+    listDir("ssl", $usercookie);
     echo '</div>
       </div>
     </div>';
