@@ -9,13 +9,33 @@
             <i id="dark-day" class="mdui-icon material-icons">color_lens</i></span>
     </div>
     <script>
+        $().ready(function () {
+            if (getCookie("darkday") == 'day'){
+                $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-loaded";
+            } else {
+                $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-dark mdui-loaded";
+            }
+        });
+
         $('#dark-day').click(function () {
             if ($('.mdui-theme-layout-dark').length == 0)
             {
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-dark mdui-loaded";
+                document.cookie="darkday=dark";
             } else {
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-loaded";
+                document.cookie="darkday=day";
             }
         });
+
+        function getCookie(cname){
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name)==0) { return c.substring(name.length,c.length); }
+            }
+            return "";
+        }
     </script>
 </header>
