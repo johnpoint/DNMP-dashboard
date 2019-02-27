@@ -13,8 +13,7 @@
             if ($('.mdui-theme-layout-dark').length == 0)
             {
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-loaded";
-            }
-        else
+            } else
             {
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-dark mdui-loaded";
             }
