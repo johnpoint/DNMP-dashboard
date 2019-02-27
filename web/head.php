@@ -9,7 +9,7 @@ echo '<head>
   <meta http-equiv="Cache-Control" content="no-siteapp">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/mdui/0.4.2/css/mdui.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
-  <script src="//raw.githubusercontent.com/johnpoint/anti-360browser.js/master/anti-360browser.js"></script>
+  <script src="//cdn.lvcshu.info/js/anti-360browser.js/master/anti-360browser.js"></script>
   <script
   src="//code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
