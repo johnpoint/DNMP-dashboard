@@ -24,7 +24,7 @@
                 <a href="?page=settings" class="mdui-list-item mdui-ripple ">设置</a>
                 <a href="?page=about" class="mdui-list-item mdui-ripple ">关于</a>
                 <a href="/" class="mdui-list-item mdui-ripple"
-                   onclick="document.cookie=\'user=0000;expires=Thu, 01 Jan 1970 00:00:00 GMT\'">退出</a>
+                   onclick="document.cookie='user=0000;expires=Thu, 01 Jan 1970 00:00:00 GMT'">退出</a>
             </div>
         </div>
     </div>

@@ -67,9 +67,13 @@ if ($vcode == 1) {
             <script src="js/serverstatus.js"></script>
             <script>
                 if ($(\
-                '.mdui-theme-layout-dark').length == 0){
-                setActiveStyleSheet('light');
-                } else
+                '.mdui-theme-layout-dark'
+                ).length == 0
+                )
+                {
+                    setActiveStyleSheet('light');
+                }
+                else
                 {
                     setActiveStyleSheet('dark');
                 }
