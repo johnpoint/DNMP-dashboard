@@ -65,25 +65,6 @@ if ($vcode == 1) {
             <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
             <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
             <script src="js/serverstatus.js"></script>
-            <script>
-                $().ready(if (getCookie("darkday") == 'null')
-                {
-                    setActiveStyleSheet('light');
-                }
-                else
-                {
-                    setActiveStyleSheet('dark');
-                });
-                function getCookie(cname){
-                    var name = cname + "=";
-                    var ca = document.cookie.split(';');
-                    for(var i=0; i<ca.length; i++) {
-                        var c = ca[i].trim();
-                        if (c.indexOf(name)==0) { return c.substring(name.length,c.length); }
-                    }
-                    return "";
-                }
-            </script>
         </div>
     </div>
 </div>
