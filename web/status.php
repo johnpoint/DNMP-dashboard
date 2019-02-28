@@ -65,6 +65,9 @@ if ($vcode == 1) {
             <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
             <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
             <script src="js/serverstatus.js"></script>
+            <script>
+                document.cookie = "status=1";
+            </script>
         </div>
     </div>
 </div>
