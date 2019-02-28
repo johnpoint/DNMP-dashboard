@@ -20,17 +20,5 @@ echo '<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-pri
                 document.cookie = "darkday=null";
             }
         });
-
-        function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i].trim();
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
     </script>
 </header>
