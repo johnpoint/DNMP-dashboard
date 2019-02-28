@@ -16,10 +16,12 @@ echo '<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-pri
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-dark mdui-loaded";
                 setActiveStyleSheet('dark');
                 document.cookie = "darkday=mdui-theme-layout-dark";
+                document.cookie = "style=dark";
             } else {
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-loaded";
                 setActiveStyleSheet('light');
                 document.cookie = "darkday=null";
+                document.cookie = "style=light";
             }
         });
     </script>
