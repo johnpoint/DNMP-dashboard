@@ -14,9 +14,11 @@ echo '<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-pri
         $('#dark-day').click(function () {
             if ($('.mdui-theme-layout-dark').length == 0) {
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-dark mdui-loaded";
+                setActiveStyleSheet('dark');
                 document.cookie = "darkday=mdui-theme-layout-dark";
             } else {
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-loaded";
+                setActiveStyleSheet('light');
                 document.cookie = "darkday=null";
             }
         });
