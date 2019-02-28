@@ -94,15 +94,11 @@ if ($vcode == 1) {
     }
     echo '</tbody>
     </table>
-  </div>';
+  </div>
+  <button id="update" class="mdui-btn mdui-btn-raised mdui-ripple">UPDATE</button>';
     echo '</div>
     </div>';
     echo "<script type=\"text/javascript\">
-    function myrefresh() 
-{ 
-       window.location.reload(); 
-} 
-setTimeout('myrefresh()',5000);
     $('td.service').click(function () {
         hitpoint=this;
         if ( this.bgColor == 'green' ){
@@ -129,6 +125,9 @@ setTimeout('myrefresh()',5000);
             });
         }
       });
+      $('#update').click(function() {
+        window.location.reload();
+      })
     </script>";
 } else {
     header("Location: /index.php");
