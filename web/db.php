@@ -17,6 +17,6 @@ if ($vcode == 1) {
     }
     echo settingsDbEdit($_POST['mod'], $_POST['name'], $_POST['do'], $data);
 } else {
-    header("Location: /index.php");
+    exit;
 }
 ?>

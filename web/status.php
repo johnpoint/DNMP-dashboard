@@ -4,7 +4,7 @@ include_once 'verify.php';
 if ($vcode == 1) {
     echo '';
 } else {
-    header("Location: /index.php");
+    exit;
 }
 ?>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">

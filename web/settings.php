@@ -4,7 +4,7 @@ include_once 'verify.php';
 if ($vcode == 1) {
     echo '';
 } else {
-    header("Location: /index.php");
+    exit;
 }
 ?>
 <div class="mdui-container doc-container doc-no-cover">

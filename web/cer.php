@@ -11,6 +11,6 @@ if ($vcode == 1) {
     </div>
   </div>';
 } else {
-    header("Location: /index.php");
+    exit;
 }
 ?>
