@@ -66,7 +66,7 @@ if ($vcode == 1) {
             <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
             <script src="js/serverstatus.js"></script>
             <script>
-                $().ready(if (getCookie("darkday") == 'day')
+                $().ready(if ($('.mdui-theme-layout-dark').length == 0)
                 {
                     setActiveStyleSheet('light');
                 }

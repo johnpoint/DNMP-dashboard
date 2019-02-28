@@ -1,4 +1,6 @@
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar">
+<?php
+echo '<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-loaded'.$_COOKIE["darkday"].'">';
+?>
 <header class="mdui-appbar mdui-appbar-fixed">
     <div class="mdui-toolbar mdui-color-theme">
         <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
@@ -9,21 +11,13 @@
             <i id="dark-day" class="mdui-icon material-icons">color_lens</i></span>
     </div>
     <script>
-        $().ready(function () {
-            if (getCookie("darkday") == 'day') {
-                $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-loaded";
-            } else {
-                $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-dark mdui-loaded";
-            }
-        });
-
         $('#dark-day').click(function () {
             if ($('.mdui-theme-layout-dark').length == 0) {
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-dark mdui-loaded";
-                document.cookie = "darkday=dark";
+                document.cookie = "darkday=mdui-theme-layout-dark";
             } else {
                 $('body')["0"].className = "mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink mdui-loaded";
-                document.cookie = "darkday=day";
+                document.cookie = "darkday=null";
             }
         });
 
