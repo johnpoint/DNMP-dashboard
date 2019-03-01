@@ -177,7 +177,7 @@ if ($vcode == 1) {
             success: function () {
                 edit.close();
                 inst.open();
-                c();
+                a();
             }
         });
     });
@@ -203,7 +203,7 @@ if ($vcode == 1) {
             success: function () {
                 editdom.close();
                 inst.open();
-                c();
+                b();
             }
         });
     })
