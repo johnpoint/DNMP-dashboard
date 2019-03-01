@@ -151,7 +151,7 @@ if ($vcode == 1) {
     var editdom = new mdui.Dialog('#editdom');
     var editsecret = new mdui.Dialog('#editsecretwindow');
 
-    $('#savedom').click(function () {
+    $('#domedit').click(function () {
         editdom.open();
     });
 
