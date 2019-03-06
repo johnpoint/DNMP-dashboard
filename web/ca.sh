@@ -4,7 +4,7 @@ secret=''
 
 rm data/* -rf
 
-i=1
+i=0
 
 cat urlfile.list | while read line
 do
@@ -47,5 +47,5 @@ do
   echo "<div class=\"mdui-progress\"><div class=\"mdui-progress-determinate\" style=\"width: ${persent}%;\"></div></div>" >> "data/$line"
 
   rm "data/$line.ca"
-  curl https://${url}/api.php?do=cernum&secret=${secret}&value=${i}
+  curl 'https://'${url}'/api.php?do=cernum&secret='${secret}'&value='${i}
 done

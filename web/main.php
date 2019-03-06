@@ -13,8 +13,8 @@ echo '<div class="mdui-container doc-container doc-no-cover">
         <h2>' . $info['num'] . '台</h2>
   </div>
   <div class="mdui-col">
-    <h1>证书</h1>
-    <h2>' . $cernum . '张</h2>
+    <h1>域名https监控</h1>
+    <h2>' . $cernum . '</h2>
   </div>
     </div>
     </div>
