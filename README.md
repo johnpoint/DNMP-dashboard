@@ -6,13 +6,13 @@
 
 ### 脚本安装
 
-```
-wget https://raw.githubusercontent.com/johnpoint/DNMP-dashboard/master/setup.sh && bash setup.sh
-```
+>TODO
 
 ### 手动安装
 
-> TODO
+```
+git clone https://github.com/johnpoint/DNMP-dashboard
+```
 
 # TODO
 

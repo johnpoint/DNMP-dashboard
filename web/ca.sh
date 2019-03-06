@@ -1,9 +1,14 @@
 #!/bin/sh
+url=''
+secret=''
 
 rm data/* -rf
 
+i=1
+
 cat urlfile.list | while read line
 do
+  let i++
   touch "data/$line"
   touch "data/$line.ca"
   curl https://$line -v -s -o /dev/null 2>"data/$line.ca"
@@ -42,4 +47,5 @@ do
   echo "<div class=\"mdui-progress\"><div class=\"mdui-progress-determinate\" style=\"width: ${persent}%;\"></div></div>" >> "data/$line"
 
   rm "data/$line.ca"
+  curl https://${url}/api.php?do=cernum&secret=${secret}&value=${i}
 done

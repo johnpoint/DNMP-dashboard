@@ -20,7 +20,8 @@ if ($secret == $SQLsecret) {
         $value = $_GET['value'];
         serverDbEdit($ipv4, NULL, NULL, 'update', $key, $value);
     } elseif ($action == 'cernum') {
-        settingsDbEdit('update', 'dom', NULL, $data);
+        $value = $_GET['value'];
+        settingsDbEdit('update', 'cernum', NULL, $value);
     }
 } else {
     echo '{"code":"1","error_text":"SECRET error"}';
