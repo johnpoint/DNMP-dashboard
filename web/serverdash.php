@@ -133,7 +133,7 @@ if ($vcode == 1) {
         $.ajax({
             url: 'api.php',
             method: 'GET',
-            data: {do:'checkupdate'},
+            data: {do:'checkupdate',secret:$('#secret')[0].innerText},
             success: function (data){
                 console.log(data);
             }
