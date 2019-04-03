@@ -128,6 +128,22 @@ if ($vcode == 1) {
       $('#update').click(function() {
         window.location.reload();
       })
+
+      funciton checkUpdate(){
+        $.ajax({
+            url: 'api.php',
+            method: 'GET',
+            data: {do:'checkupdate'},
+            success: function (){
+                console.log(data);
+            )
+            });
+      }
+
+      const timeId = setInterval(() => {
+        if (true) {
+          clearInterval(this.timeId)
+        };checkUpdate();},3000)
     </script>";
 } else {
     header("Location: /index.php");
