@@ -109,7 +109,6 @@ if ($vcode == 1) {
                 success: function () {
                     hitpoint.bgColor='yellow';
                     hitpoint.innerHTML='close';
-                    location.reload();
                 }
             });
         } else {
@@ -120,7 +119,6 @@ if ($vcode == 1) {
                 success: function () {
                     hitpoint.bgColor='yellow';
                     hitpoint.innerHTML='opening';
-                    location.reload();
                 }
             });
         }
@@ -143,45 +141,61 @@ if ($vcode == 1) {
                             case 4:
                                 if(a['info'][i]['nginx']==1){
                                     $('#'+i+''+j)[0]['innerText']='running';
+                                    $('#'+i+''+j)[0]['bgcolor']='green';
                                 }else if(a['info'][i]['nginx']==0){
                                     $('#'+i+''+j)[0]['innerText']='deaded';
+                                    $('#'+i+''+j)[0]['bgcolor']='red';
                                 }else if(a['info'][i]['nginx']==10){
                                     $('#'+i+''+j)[0]['innerText']='close';
+                                    $('#'+i+''+j)[0]['bgcolor']='yellow';
                                 }else if(a['info'][i]['nginx']==11){
                                     $('#'+i+''+j)[0]['innerText']='opening';
+                                    $('#'+i+''+j)[0]['bgcolor']='yellow';
                                 }
                                 break;
                             case 5:
                                 if(a['info'][i]['phpfpm']==1){
                                     $('#'+i+''+j)[0]['innerText']='running';
+                                    $('#'+i+''+j)[0]['bgcolor']='green';
                                 }else if(a['info'][i]['phpfpm']==0){
                                     $('#'+i+''+j)[0]['innerText']='deaded';
+                                    $('#'+i+''+j)[0]['bgcolor']='red';
                                 }else if(a['info'][i]['phpfpm']==10){
                                     $('#'+i+''+j)[0]['innerText']='close';
+                                    $('#'+i+''+j)[0]['bgcolor']='yellow';
                                 }else if(a['info'][i]['phpfpm']==11){
                                     $('#'+i+''+j)[0]['innerText']='opening';
+                                    $('#'+i+''+j)[0]['bgcolor']='yellow';
                                 }
                                 break;
                             case 6:
                                 if(a['info'][i]['mysql']==1){
                                     $('#'+i+''+j)[0]['innerText']='running';
+                                    $('#'+i+''+j)[0]['bgcolor']='green';
                                 }else if(a['info'][i]['mysql']==0){
                                     $('#'+i+''+j)[0]['innerText']='deaded';
+                                    $('#'+i+''+j)[0]['bgcolor']='red';
                                 }else if(a['info'][i]['mysql']==10){
                                     $('#'+i+''+j)[0]['innerText']='close';
+                                    $('#'+i+''+j)[0]['bgcolor']='yellow';
                                 }else if(a['info'][i]['mysql']==11){
                                     $('#'+i+''+j)[0]['innerText']='opening';
+                                    $('#'+i+''+j)[0]['bgcolor']='yellow';
                                 }
                                 break;
                             case 7:
                                 if(a['info'][i]['proxy']==1){
                                     $('#'+i+''+j)[0]['innerText']='running';
+                                    $('#'+i+''+j)[0]['bgcolor']='green';
                                 }else if(a['info'][i]['proxy']==0){
                                     $('#'+i+''+j)[0]['innerText']='deaded';
+                                    $('#'+i+''+j)[0]['bgcolor']='red';
                                 }else if(a['info'][i]['proxy']==10){
                                     $('#'+i+''+j)[0]['innerText']='close';
+                                    $('#'+i+''+j)[0]['bgcolor']='yellow';
                                 }else if(a['info'][i]['proxy']==11){
                                     $('#'+i+''+j)[0]['innerText']='opening';
+                                    $('#'+i+''+j)[0]['bgcolor']='yellow';
                                 }
                                 break;
                         }
