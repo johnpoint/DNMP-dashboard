@@ -135,7 +135,7 @@ if ($vcode == 1) {
             method: 'GET',
             data: {do:'checkupdate',secret:$('#secret')[0].innerText},
             success: function (data){
-                data;
+                var msg = data;
             }
         });
       };
