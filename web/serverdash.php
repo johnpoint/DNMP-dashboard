@@ -128,14 +128,66 @@ if ($vcode == 1) {
       $('#update').click(function() {
         window.location.reload();
       });
-
+      var msg = 0;
       function checkUpdate(){
         $.ajax({
             url: 'api.php',
             method: 'GET',
             data: {do:'checkupdate',secret:$('#secret')[0].innerText},
             success: function (data){
-                var msg = data;
+                msg = data;
+                a = JSON.parse(msg);
+                for(var i=0;i<a['info']['length'];i++){
+                    for(var j=4;j<8;j++){
+                        switch(j){
+                            case 4:
+                                if(a['info'][i]['nginx']==1){
+                                    $('#'+i+''+j)[0]['innerText']='running';
+                                }else if(a['info'][i]['nginx']==0){
+                                    $('#'+i+''+j)[0]['innerText']='deaded';
+                                }else if(a['info'][i]['nginx']==10){
+                                    $('#'+i+''+j)[0]['innerText']='close';
+                                }else if(a['info'][i]['nginx']==11){
+                                    $('#'+i+''+j)[0]['innerText']='opening';
+                                }
+                                break;
+                            case 5:
+                                if(a['info'][i]['phpfpm']==1){
+                                    $('#'+i+''+j)[0]['innerText']='running';
+                                }else if(a['info'][i]['phpfpm']==0){
+                                    $('#'+i+''+j)[0]['innerText']='deaded';
+                                }else if(a['info'][i]['phpfpm']==10){
+                                    $('#'+i+''+j)[0]['innerText']='close';
+                                }else if(a['info'][i]['phpfpm']==11){
+                                    $('#'+i+''+j)[0]['innerText']='opening';
+                                }
+                                break;
+                            case 6:
+                                if(a['info'][i]['mysql']==1){
+                                    $('#'+i+''+j)[0]['innerText']='running';
+                                }else if(a['info'][i]['mysql']==0){
+                                    $('#'+i+''+j)[0]['innerText']='deaded';
+                                }else if(a['info'][i]['mysql']==10){
+                                    $('#'+i+''+j)[0]['innerText']='close';
+                                }else if(a['info'][i]['mysql']==11){
+                                    $('#'+i+''+j)[0]['innerText']='opening';
+                                }
+                                break;
+                            case 7:
+                                if(a['info'][i]['proxy']==1){
+                                    $('#'+i+''+j)[0]['innerText']='running';
+                                }else if(a['info'][i]['proxy']==0){
+                                    $('#'+i+''+j)[0]['innerText']='deaded';
+                                }else if(a['info'][i]['proxy']==10){
+                                    $('#'+i+''+j)[0]['innerText']='close';
+                                }else if(a['info'][i]['proxy']==11){
+                                    $('#'+i+''+j)[0]['innerText']='opening';
+                                }
+                                break;
+                        }
+                        
+                    }
+                }
             }
         });
       };
