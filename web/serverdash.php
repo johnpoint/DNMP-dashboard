@@ -127,18 +127,18 @@ if ($vcode == 1) {
       });
       $('#update').click(function() {
         window.location.reload();
-      })
+      });
 
       funciton checkUpdate(){
         $.ajax({
             url: 'api.php',
             method: 'GET',
             data: {do:'checkupdate'},
-            success: function (){
+            success: function (data){
                 console.log(data);
             )
-            });
-      }
+        });
+      };
 
       const timeId = setInterval(() => {
         if (true) {
