@@ -129,7 +129,7 @@ if ($vcode == 1) {
         window.location.reload();
       });
 
-      funciton checkUpdate(){
+      function checkUpdate(){
         $.ajax({
             url: 'api.php',
             method: 'GET',
