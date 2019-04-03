@@ -23,7 +23,7 @@ if ($secret == $SQLsecret) {
         $value = $_GET['value'];
         settingsDbEdit('update', 'cernum', NULL, $value);
     } elseif ($action == 'checkupdate') {
-        echo serverDbView('*');
+        echo json_encode(serverDbView('*'));
     }
 } else {
     echo '{"code":"1","error_text":"SECRET error"}';
