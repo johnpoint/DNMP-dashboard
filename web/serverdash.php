@@ -136,7 +136,7 @@ if ($vcode == 1) {
             data: {do:'checkupdate'},
             success: function (data){
                 console.log(data);
-            )
+            }
         });
       };
 
