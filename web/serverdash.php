@@ -98,7 +98,7 @@ if ($vcode == 1) {
   <button id="update" class="mdui-btn mdui-btn-raised mdui-ripple">UPDATE</button>';
     echo '</div>
     </div>';
-    echo '<script src="js/updateStatus.js?v=1.0.2"></script>';
+    echo '<script src="js/updateStatus.js?v=1.0.3"></script>';
 } else {
     header("Location: /index.php");
 }
