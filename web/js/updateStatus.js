@@ -1,1 +1,112 @@
-var error=0;var d=0;var server_status=new Array();function timeSince(b){if(b==0){return"never."}var c=Math.floor((new Date()-b)/1000);var a=Math.floor(c/31536000);if(a>1){return a+" years ago."}a=Math.floor(c/2592000);if(a>1){return a+" months ago."}a=Math.floor(c/86400);if(a>1){return a+" days ago."}a=Math.floor(c/3600);if(a>1){return a+" hours ago."}a=Math.floor(c/60);if(a>1){return a+" minutes ago."}else{return"a few seconds ago."}}function bytesToSize(c,b,h){var g;h=typeof h!=="undefined"?h:0;if(h!=0){var f=1000;var a=f*1000;var e=a*1000;var i=e*1000}else{var f=1024;var a=f*1024;var e=a*1024;var i=e*1024}if((c>=0)&&(c<f)){return c+" B"}else{if((c>=f)&&(c<a)){g=(c/f).toFixed(b)+" K"}else{if((c>=a)&&(c<e)){g=(c/a).toFixed(b)+" M"}else{if((c>=e)&&(c<i)){g=(c/e).toFixed(b)+" G"}else{if(c>=i){g=(c/i).toFixed(b)+" T"}else{return c+" B"}}}}}if(h!=0){return g+"B"}else{return g+"iB"}}function uptime(){$.getJSON("json/stats.json",function(a){$("#loading-notice").remove();if(a.reload){setTimeout(function(){location.reload(true)},1000)}for(var e=0;e<a.servers.length;e++){var b=$("#servers tr#r"+e);var h=$("#servers #rt"+e);var g;if(e%2){g="odd"}else{g="even"}if(!b.length){$("#servers").append('<tr id="r'+e+'" data-toggle="collapse" data-target="#rt'+e+'" class="accordion-toggle '+g+'">'+'<td id="online4"><div class="progress"><div style="width: 100%;" class="progress-bar progress-bar-warning"><small>Loading</small></div></div></td>'+'<td id="online6"><div class="progress"><div style="width: 100%;" class="progress-bar progress-bar-warning"><small>Loading</small></div></div></td>'+'<td id="name">Loading...</td>'+'<td id="type">Loading...</td>'+'<td id="host">Loading...</td>'+'<td id="location">Loading...</td>'+'<td id="uptime">Loading...</td>'+'<td id="load">Loading...</td>'+'<td id="network">Loading...</td>'+'<td id="cpu"><div class="progress progress-striped active"><div style="width: 100%;" class="progress-bar progress-bar-warning"><small>Loading...</small></div></div></td>'+'<td id="memory"><div class="progress progress-striped active"><div style="width: 100%;" class="progress-bar progress-bar-warning"><small>Loading...</small></div></div></td>'+'<td id="hdd"><div class="progress progress-striped active"><div style="width: 100%;" class="progress-bar progress-bar-warning"><small>Loading...</small></div></div></td>'+"</tr>"+'<tr class="expandRow '+g+'"><td colspan="12"><div class="accordian-body collapse" id="rt'+e+'">'+'<div id="expand_mem">Loading...</div>'+'<div id="expand_swap">Loading...</div>'+'<div id="expand_hdd">Loading...</div>'+'<div id="expand_custom">Loading...</div>'+"</div></td></tr>");b=$("#servers tr#r"+e);h=$("#servers #rt"+e);server_status[e]=true}b=b[0];if(error){b.setAttribute("data-target","#rt"+e);server_status[e]=true}if(a.servers[e].online4){b.children["online4"].children[0].children[0].className="progress-bar progress-bar-success";b.children["online4"].children[0].children[0].innerHTML="<small>Up</small>"}else{b.children["online4"].children[0].children[0].className="progress-bar progress-bar-danger";b.children["online4"].children[0].children[0].innerHTML="<small>Down</small>"}if(a.servers[e].online6){b.children["online6"].children[0].children[0].className="progress-bar progress-bar-success";b.children["online6"].children[0].children[0].innerHTML="<small>Up</small>"}else{b.children["online6"].children[0].children[0].className="progress-bar progress-bar-danger";b.children["online6"].children[0].children[0].innerHTML="<small>Down</small>"}b.children["name"].innerHTML=a.servers[e].name;b.children["type"].innerHTML=a.servers[e].type;b.children["host"].innerHTML=a.servers[e].host;b.children["location"].innerHTML=a.servers[e].location;if(!a.servers[e].online4&&!a.servers[e].online6){if(server_status[e]){b.children["uptime"].innerHTML="–";b.children["load"].innerHTML="–";b.children["network"].innerHTML="–";b.children["cpu"].children[0].children[0].className="progress-bar progress-bar-danger";b.children["cpu"].children[0].children[0].style.width="100%";b.children["cpu"].children[0].children[0].innerHTML="<small>Down</small>";b.children["memory"].children[0].children[0].className="progress-bar progress-bar-danger";b.children["memory"].children[0].children[0].style.width="100%";b.children["memory"].children[0].children[0].innerHTML="<small>Down</small>";b.children["hdd"].children[0].children[0].className="progress-bar progress-bar-danger";b.children["hdd"].children[0].children[0].style.width="100%";b.children["hdd"].children[0].children[0].innerHTML="<small>Down</small>";if(h.hasClass("in")){h.collapse("hide")}b.setAttribute("data-target","");server_status[e]=false}}else{if(!server_status[e]){b.setAttribute("data-target","#rt"+e);server_status[e]=true}b.children["uptime"].innerHTML=a.servers[e].uptime;if(a.servers[e].load==-1){b.children["load"].innerHTML="–"}else{b.children["load"].innerHTML=a.servers[e].load.toFixed(2)}var f="";if(a.servers[e].network_rx<1000){f+=a.servers[e].network_rx.toFixed(0)+"B"}else{if(a.servers[e].network_rx<1000*1000){f+=(a.servers[e].network_rx/1000).toFixed(0)+"K"}else{f+=(a.servers[e].network_rx/1000/1000).toFixed(1)+"M"}}f+="|";if(a.servers[e].network_tx<1000){f+=a.servers[e].network_tx.toFixed(0)+"B"}else{if(a.servers[e].network_tx<1000*1000){f+=(a.servers[e].network_tx/1000).toFixed(0)+"K"}else{f+=(a.servers[e].network_tx/1000/1000).toFixed(1)+"M"}}b.children["network"].innerHTML=f;if(a.servers[e].cpu>=90){b.children["cpu"].children[0].children[0].className="progress-bar progress-bar-danger"}else{if(a.servers[e].cpu>=80){b.children["cpu"].children[0].children[0].className="progress-bar progress-bar-warning"}else{b.children["cpu"].children[0].children[0].className="progress-bar progress-bar-success"}}b.children["cpu"].children[0].children[0].style.width=a.servers[e].cpu+"%";b.children["cpu"].children[0].children[0].innerHTML=a.servers[e].cpu+"%";var c=((a.servers[e].memory_used/a.servers[e].memory_total)*100).toFixed(0);if(c>=90){b.children["memory"].children[0].children[0].className="progress-bar progress-bar-danger"}else{if(c>=80){b.children["memory"].children[0].children[0].className="progress-bar progress-bar-warning"}else{b.children["memory"].children[0].children[0].className="progress-bar progress-bar-success"}}b.children["memory"].children[0].children[0].style.width=c+"%";b.children["memory"].children[0].children[0].innerHTML=c+"%";h[0].children["expand_mem"].innerHTML="Memory: "+bytesToSize(a.servers[e].memory_used*1024,2)+" / "+bytesToSize(a.servers[e].memory_total*1024,2);h[0].children["expand_swap"].innerHTML="Swap: "+bytesToSize(a.servers[e].swap_used*1024,2)+" / "+bytesToSize(a.servers[e].swap_total*1024,2);var j=((a.servers[e].hdd_used/a.servers[e].hdd_total)*100).toFixed(0);if(j>=90){b.children["hdd"].children[0].children[0].className="progress-bar progress-bar-danger"}else{if(j>=80){b.children["hdd"].children[0].children[0].className="progress-bar progress-bar-warning"}else{b.children["hdd"].children[0].children[0].className="progress-bar progress-bar-success"}}b.children["hdd"].children[0].children[0].style.width=j+"%";b.children["hdd"].children[0].children[0].innerHTML=j+"%";h[0].children["expand_hdd"].innerHTML="Disk: "+bytesToSize(a.servers[e].hdd_used*1024*1024,2)+" / "+bytesToSize(a.servers[e].hdd_total*1024*1024,2);if(a.servers[e].custom){h[0].children["expand_custom"].innerHTML=a.servers[e].custom}else{h[0].children["expand_custom"].innerHTML=""}}}d=new Date(a.updated*1000);error=0}).fail(function(a){if(!error){$("#servers > tr.accordion-toggle").each(function(c){var b=$("#servers tr#r"+c)[0];var e=$("#servers #rt"+c);b.children["online4"].children[0].children[0].className="progress-bar progress-bar-error";b.children["online4"].children[0].children[0].innerHTML="<small>Error</small>";b.children["online6"].children[0].children[0].className="progress-bar progress-bar-error";b.children["online6"].children[0].children[0].innerHTML="<small>Error</small>";b.children["uptime"].innerHTML='<div class="progress progress-striped active"><div style="width: 100%;" class="progress-bar progress-bar-error"><small>Error</small></div></div>';b.children["load"].innerHTML='<div class="progress progress-striped active"><div style="width: 100%;" class="progress-bar progress-bar-error"><small>Error</small></div></div>';b.children["network"].innerHTML='<div class="progress progress-striped active"><div style="width: 100%;" class="progress-bar progress-bar-error"><small>Error</small></div></div>';b.children["cpu"].children[0].children[0].className="progress-bar progress-bar-error";b.children["cpu"].children[0].children[0].style.width="100%";b.children["cpu"].children[0].children[0].innerHTML="<small>Error</small>";b.children["memory"].children[0].children[0].className="progress-bar progress-bar-error";b.children["memory"].children[0].children[0].style.width="100%";b.children["memory"].children[0].children[0].innerHTML="<small>Error</small>";b.children["hdd"].children[0].children[0].className="progress-bar progress-bar-error";b.children["hdd"].children[0].children[0].style.width="100%";b.children["hdd"].children[0].children[0].innerHTML="<small>Error</small>";if(e.hasClass("in")){e.collapse("hide")}b.setAttribute("data-target","");server_status[c]=false})}error=1;$("#updated").html("Update error.")})}function updateTime(){if(!error){$("#updated").html("Last updated: "+timeSince(d))}}uptime();updateTime();setInterval(uptime,2000);setInterval(updateTime,500);function setActiveStyleSheet(f){var e,c,b;for(e=0;(c=document.getElementsByTagName("link")[e]);e++){if(c.getAttribute("rel").indexOf("style")!=-1&&c.getAttribute("title")){c.disabled=true;if(c.getAttribute("title")==f){c.disabled=false}}}}function getActiveStyleSheet(){var c,b;for(c=0;(b=document.getElementsByTagName("link")[c]);c++){if(b.getAttribute("rel").indexOf("style")!=-1&&b.getAttribute("title")&&!b.disabled){return b.getAttribute("title")}}return null}function getPreferredStyleSheet(){var c,b;for(c=0;(b=document.getElementsByTagName("link")[c]);c++){if(b.getAttribute("rel").indexOf("style")!=-1&&b.getAttribute("rel").indexOf("alt")==-1&&b.getAttribute("title")){return b.getAttribute("title")}}return null}function createCookie(c,e,f){if(f){var b=new Date();b.setTime(b.getTime()+(f*24*60*60*1000));var a="; expires="+b.toGMTString()}else{a=""}document.cookie=c+"="+e+a+"; path=/"}function readCookie(b){var f=b+"=";var a=document.cookie.split(";");for(var e=0;e<a.length;e++){var g=a[e];while(g.charAt(0)==" "){g=g.substring(1,g.length)}if(g.indexOf(f)==0){return g.substring(f.length,g.length)}}return null}window.onload=function(b){var a=readCookie("style");var c=a?a:getPreferredStyleSheet();setActiveStyleSheet(c)};window.onunload=function(a){var b=getActiveStyleSheet();createCookie("style",b,365)};var cookie=readCookie("style");var title=cookie?cookie:getPreferredStyleSheet();setActiveStyleSheet(title);
+$('td.service').click(function () {
+    hitpoint = this;
+    if (this.bgColor == 'green') {
+        $.ajax({
+            url: 'api.php',
+            method: 'GET',
+            data: { do: 'repo', ipv4: this.attributes['4'].nodeValue, key: this.attributes['0'].nodeValue, value: '10', secret: document.getElementById('nonediv').innerHTML },
+            success: function () {
+                hitpoint.bgColor = 'yellow';
+                hitpoint.innerHTML = 'close';
+            }
+        });
+    } else {
+        $.ajax({
+            url: 'api.php',
+            method: 'GET',
+            data: { do: 'repo', ipv4: this.attributes['4'].nodeValue, key: this.attributes['0'].nodeValue, value: '11', secret: document.getElementById('nonediv').innerHTML },
+            success: function () {
+                hitpoint.bgColor = 'yellow';
+                hitpoint.innerHTML = 'opening';
+            }
+        });
+    }
+});
+$('#update').click(function () {
+    window.location.reload();
+});
+var msg = 0;
+function checkUpdate() {
+    $.ajax({
+        url: 'api.php',
+        method: 'GET',
+        data: { do: 'checkupdate', secret: $('#secret')[0].innerText },
+        success: function (data) {
+            msg = data;
+            a = JSON.parse(msg);
+            for (var i = 0; i < a['info']['length']; i++) {
+                for (var j = 4; j < 8; j++) {
+                    switch (j) {
+                        case 4:
+                            if (a['info'][i]['nginx'] == 1) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'running';
+                                $('#' + i + '' + j)[0].bgColor = 'green';
+                            } else if (a['info'][i]['nginx'] == 0) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'deaded';
+                                $('#' + i + '' + j)[0].bgColor = 'red';
+                            } else if (a['info'][i]['nginx'] == 10) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'close';
+                                $('#' + i + '' + j)[0].bgColor = 'yellow';
+                            } else if (a['info'][i]['nginx'] == 11) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'opening';
+                                $('#' + i + '' + j)[0].bgColor = 'yellow';
+                            }
+                            break;
+                        case 5:
+                            if (a['info'][i]['phpfpm'] == 1) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'running';
+                                $('#' + i + '' + j)[0].bgColor = 'green';
+                            } else if (a['info'][i]['phpfpm'] == 0) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'deaded';
+                                $('#' + i + '' + j)[0].bgColor = 'red';
+                            } else if (a['info'][i]['phpfpm'] == 10) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'close';
+                                $('#' + i + '' + j)[0].bgColor = 'yellow';
+                            } else if (a['info'][i]['phpfpm'] == 11) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'opening';
+                                $('#' + i + '' + j)[0].bgColor = 'yellow';
+                            }
+                            break;
+                        case 6:
+                            if (a['info'][i]['mysql'] == 1) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'running';
+                                $('#' + i + '' + j)[0].bgColor = 'green';
+                            } else if (a['info'][i]['mysql'] == 0) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'deaded';
+                                $('#' + i + '' + j)[0].bgColor = 'red';
+                            } else if (a['info'][i]['mysql'] == 10) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'close';
+                                $('#' + i + '' + j)[0].bgColor = 'yellow';
+                            } else if (a['info'][i]['mysql'] == 11) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'opening';
+                                $('#' + i + '' + j)[0].bgColor = 'yellow';
+                            }
+                            break;
+                        case 7:
+                            if (a['info'][i]['proxy'] == 1) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'running';
+                                $('#' + i + '' + j)[0].bgColor = 'green';
+                            } else if (a['info'][i]['proxy'] == 0) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'deaded';
+                                $('#' + i + '' + j)[0].bgColor = 'red';
+                            } else if (a['info'][i]['proxy'] == 10) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'close';
+                                $('#' + i + '' + j)[0].bgColor = 'yellow';
+                            } else if (a['info'][i]['proxy'] == 11) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'opening';
+                                $('#' + i + '' + j)[0].bgColor = 'yellow';
+                            }
+                            break;
+                    }
+
+                }
+            }
+        }
+    });
+};
+
+const timeId = setInterval(() => {
+    if (true) {
+        clearInterval(this.timeId)
+    }; checkUpdate();
+}, 3000)
