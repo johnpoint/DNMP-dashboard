@@ -102,6 +102,3 @@ if ($vcode == 1) {
 } else {
     header("Location: /index.php");
 }
-
-
-?>

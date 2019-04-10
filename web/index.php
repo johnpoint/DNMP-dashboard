@@ -18,4 +18,3 @@ if ($_COOKIE["user"] == '') {
 }
 include_once $page . '.php';
 include_once 'footer.php';
-?>

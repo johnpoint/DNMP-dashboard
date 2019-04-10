@@ -21,4 +21,3 @@ function error(){
 error();
 </script>';
 }
-?>

@@ -99,5 +99,3 @@ function serverDbView($name)
         return '{"code":"1"}';
     }
 }
-
-?>  

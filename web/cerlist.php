@@ -32,4 +32,3 @@ if ($vcode == 1) {
 } else {
     echo 'error';
 }
-?>

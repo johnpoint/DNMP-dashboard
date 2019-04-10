@@ -16,4 +16,3 @@ if ($secret == $SQLsecret) {
 } else {
     echo '{"code":"1","error_text":"SECRET error"}';
 }
-?>
