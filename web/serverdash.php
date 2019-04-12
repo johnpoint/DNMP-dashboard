@@ -78,7 +78,7 @@ if ($vcode == 1) {
             $j++;
         }
 
-        if ($info['info'][$i]['update'] == '1') {
+        if ($info['info'][$i]['update'] == '0') {
             echo '<td item="update" class="service" id=' . $i . $j . ' bgcolor="green" ip=' . $info['info'][$i]['ipv4'] . '>UPGRADE</td>';
             $j++;
         } else {
