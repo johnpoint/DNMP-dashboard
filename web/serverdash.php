@@ -78,27 +78,20 @@ if ($vcode == 1) {
             $j++;
         }
 
-        if ($info['info'][$i]['proxy'] == '1') {
-            echo '<td item="proxy" class="service" id=' . $i . $j . ' bgcolor="green" ip=' . $info['info'][$i]['ipv4'] . '>running</td>';
-            $j++;
-        } elseif ($info['info'][$i]['proxy'] == '10') {
-            echo '<td item="proxy" class="service" id=' . $i . $j . ' bgcolor="yellow" ip=' . $info['info'][$i]['ipv4'] . '>close</td>';
-            $j++;
-        } elseif ($info['info'][$i]['proxy'] == '11') {
-            echo '<td item="proxy" class="service" id=' . $i . $j . ' bgcolor="yellow" ip=' . $info['info'][$i]['ipv4'] . '>opening</td>';
+        if ($info['info'][$i]['update'] == '1') {
+            echo '<td item="update" class="service" id=' . $i . $j . ' bgcolor="green" ip=' . $info['info'][$i]['ipv4'] . '>UPGRADE</td>';
             $j++;
         } else {
-            echo '<td item="proxy" class="service" id=' . $i . $j . ' bgcolor="red" ip=' . $info['info'][$i]['ipv4'] . '>deaded</td>';
+            echo '<td item="update" class="service" id=' . $i . $j . ' bgcolor="gray" ip=' . $info['info'][$i]['ipv4'] . '>UPGRADING</td>';
             $j++;
         }
     }
     echo '</tbody>
     </table>
-    <button id="upgradenginx" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">Upgrade nginx</button>
   </div>';
     echo '</div>
     </div>';
-    echo '<script src="js/updateStatus.js?v=1.1.5"></script>';
+    echo '<script src="js/updateStatus.js?v=1.2.0"></script>';
 } else {
     header("Location: /index.php");
 }

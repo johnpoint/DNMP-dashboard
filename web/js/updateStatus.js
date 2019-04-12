@@ -22,16 +22,6 @@ $('td.service').click(function () {
         });
     }
 });
-$('#upgradenginx').click(function () {
-    $.ajax({
-        url: "db.php",
-        method: "POST",
-        data: {mod: "update", name: "nginx", data: 1},
-        success: function () {
-            $('#upgradenginx').disabled=true;
-        }
-    })
-});
 var msg = 0;
 function checkUpdate() {
     $.ajax({
@@ -90,18 +80,12 @@ function checkUpdate() {
                             }
                             break;
                         case 7:
-                            if (a['info'][i]['proxy'] == 1) {
-                                $('#' + i + '' + j)[0]['innerText'] = 'running';
+                            if (a['info'][i]['update'] == 1) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'UPGRADE';
                                 $('#' + i + '' + j)[0].bgColor = 'green';
-                            } else if (a['info'][i]['proxy'] == 0) {
-                                $('#' + i + '' + j)[0]['innerText'] = 'deaded';
-                                $('#' + i + '' + j)[0].bgColor = 'red';
-                            } else if (a['info'][i]['proxy'] == 10) {
-                                $('#' + i + '' + j)[0]['innerText'] = 'close';
-                                $('#' + i + '' + j)[0].bgColor = 'yellow';
-                            } else if (a['info'][i]['proxy'] == 11) {
-                                $('#' + i + '' + j)[0]['innerText'] = 'opening';
-                                $('#' + i + '' + j)[0].bgColor = 'yellow';
+                            } else if (a['info'][i]['update'] == 0) {
+                                $('#' + i + '' + j)[0]['innerText'] = 'UPGRADING';
+                                $('#' + i + '' + j)[0].bgColor = 'gray';
                             }
                             break;
                     }
@@ -110,18 +94,6 @@ function checkUpdate() {
             }
         }
     });
-    $.ajax({
-        url: 'db.php',
-        method: "POST",
-        data: { mod: "view", name: "nginx" },
-        success: function (data) {
-            if (data == '1') {
-                $('#upgradenginx')[0].disabled=true;
-            }else{
-                $('#upgradenginx')[0].disabled=false;
-            }
-        }
-    })
 };
 
 const timeId = setInterval(() => {
