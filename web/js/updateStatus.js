@@ -116,9 +116,9 @@ function checkUpdate() {
         data: { mod: "view", name: "nginx" },
         success: function (data) {
             if (data == '1') {
-                $('#upgradenginx').disabled=true;
+                $('#upgradenginx')[0].disabled=true;
             }else{
-                $('#upgradenginx').disabled=false;
+                $('#upgradenginx')[0].disabled=false;
             }
         }
     })

@@ -98,7 +98,7 @@ if ($vcode == 1) {
   </div>';
     echo '</div>
     </div>';
-    echo '<script src="js/updateStatus.js?v=1.1.4"></script>';
+    echo '<script src="js/updateStatus.js?v=1.1.5"></script>';
 } else {
     header("Location: /index.php");
 }
