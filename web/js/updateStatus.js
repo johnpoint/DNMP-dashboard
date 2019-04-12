@@ -115,7 +115,7 @@ function checkUpdate() {
         method: "POST",
         data: { mod: "view", name: "nginx" },
         success: function (data) {
-            if (data == 1) {
+            if (data == '1') {
                 $('#upgradenginx').disabled=true;
             }else{
                 $('#upgradenginx').disabled=false;
