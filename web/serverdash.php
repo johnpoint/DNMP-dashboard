@@ -24,7 +24,7 @@ if ($vcode == 1) {
       <th>nginx</th>
       <th>php-fpm</th>
       <th>mysql</th>
-      <th>proxy</th>
+      <th>update</th>
     </tr></thead><tbody>';
     for ($i = 0; $i < $info['num']; $i++) {
         $j = 0;
