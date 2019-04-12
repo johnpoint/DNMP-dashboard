@@ -94,6 +94,7 @@ if ($vcode == 1) {
     }
     echo '</tbody>
     </table>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">Upgrade nginx</button>
   </div>';
     echo '</div>
     </div>';
