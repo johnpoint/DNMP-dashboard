@@ -22,8 +22,15 @@ $('td.service').click(function () {
         });
     }
 });
-$('#update').click(function () {
-    window.location.reload();
+$('#upgradenginx').click(function () {
+    $.ajax({
+        url: "db.php",
+        method: "POST",
+        data: {mod: "update", name: "nginx", data: 1},
+        success: function () {
+            $('#upgradenginx').disabled=true;
+        }
+    })
 });
 var msg = 0;
 function checkUpdate() {
@@ -103,6 +110,17 @@ function checkUpdate() {
             }
         }
     });
+    $.ajax({
+        url: 'api.php',
+        data: { mod: "view", name: "nginx" },
+        success: function (data) {
+            if ($data == 1) {
+                $('#upgradenginx').disabled=true;
+            }else{
+                $('#upgradenginx').disabled=false;
+            }
+        }
+    })
 };
 
 const timeId = setInterval(() => {
