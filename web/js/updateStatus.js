@@ -7,7 +7,7 @@ $('td.service').click(function () {
             data: { do: 'repo', ipv4: this.attributes['4'].nodeValue, key: this.attributes['0'].nodeValue, value: '10', secret: document.getElementById('nonediv').innerHTML },
             success: function () {
                 hitpoint.bgColor = 'yellow';
-                hitpoint.innerHTML = 'close';
+                hitpoint.innerHTML = 'SWITCH';
             }
         });
     } else {
@@ -17,7 +17,7 @@ $('td.service').click(function () {
             data: { do: 'repo', ipv4: this.attributes['4'].nodeValue, key: this.attributes['0'].nodeValue, value: '11', secret: document.getElementById('nonediv').innerHTML },
             success: function () {
                 hitpoint.bgColor = 'yellow';
-                hitpoint.innerHTML = 'opening';
+                hitpoint.innerHTML = 'SWITCH';
             }
         });
     }
