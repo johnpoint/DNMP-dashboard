@@ -111,7 +111,7 @@ function checkUpdate() {
         }
     });
     $.ajax({
-        url: 'api.php',
+        url: 'db.php',
         data: { mod: "view", name: "nginx" },
         success: function (data) {
             if (data == 1) {
