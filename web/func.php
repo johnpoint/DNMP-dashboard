@@ -90,7 +90,7 @@ function serverDbView($name)
             $info['nginx'] = $row['nginx'];
             $info['phpfpm'] = $row['phpfpm'];
             $info['mysql'] = $row['mysql'];
-            $info['proxy'] = $row['proxy'];
+            $info['update'] = $row['update'];
             array_push($data['info'], $info);
         }
         $data['num'] = $num + 1;
