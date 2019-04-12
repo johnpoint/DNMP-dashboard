@@ -114,7 +114,7 @@ function checkUpdate() {
         url: 'api.php',
         data: { mod: "view", name: "nginx" },
         success: function (data) {
-            if ($data == 1) {
+            if (data == 1) {
                 $('#upgradenginx').disabled=true;
             }else{
                 $('#upgradenginx').disabled=false;
