@@ -94,8 +94,7 @@ if ($vcode == 1) {
     }
     echo '</tbody>
     </table>
-    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">Upgrade nginx</button>
-  </div>';
+  </div><button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">Upgrade nginx</button><div class="mdui-spinner"></div>';
     echo '</div>
     </div>';
     echo '<script src="js/updateStatus.js?v=1.0.3"></script>';
