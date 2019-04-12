@@ -112,6 +112,7 @@ function checkUpdate() {
     });
     $.ajax({
         url: 'db.php',
+        method: "POST",
         data: { mod: "view", name: "nginx" },
         success: function (data) {
             if (data == 1) {
