@@ -78,11 +78,11 @@ if ($vcode == 1) {
             $j++;
         }
 
-        if ($info['info'][$i]['update'] == '1') {
-            echo '<td item="update" class="service" id=' . $i . $j . ' bgcolor="green" ip=' . $info['info'][$i]['ipv4'] . '>UPGRADE</td>';
+        if ($info['info'][$i]['Nupdate'] == '1') {
+            echo '<td item="Nupdate" class="service" id=' . $i . $j . ' bgcolor="green" ip=' . $info['info'][$i]['ipv4'] . '>UPGRADE</td>';
             $j++;
         } else {
-            echo '<td item="update" class="service" id=' . $i . $j . ' bgcolor="gray" ip=' . $info['info'][$i]['ipv4'] . '>UPGRADING</td>';
+            echo '<td item="Nupdate" class="service" id=' . $i . $j . ' bgcolor="gray" ip=' . $info['info'][$i]['ipv4'] . '>UPGRADING</td>';
             $j++;
         }
     }

@@ -80,7 +80,7 @@ function checkUpdate() {
                             }
                             break;
                         case 7:
-                            if (a['info'][i]['update'] == 1) {
+                            if (a['info'][i]['Nupdate'] == 1) {
                                 $('#' + i + '' + j)[0]['innerText'] = 'UPGRADE';
                                 $('#' + i + '' + j)[0].bgColor = 'green';
                             } else {
