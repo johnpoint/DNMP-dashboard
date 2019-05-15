@@ -91,6 +91,7 @@ function serverDbView($name)
             $info['phpfpm'] = $row['phpfpm'];
             $info['mysql'] = $row['mysql'];
             $info['Nupdate'] = $row['Nupdate'];
+            $info['code'] = $row['code'];
             array_push($data['info'], $info);
         }
         $data['num'] = $num + 1;

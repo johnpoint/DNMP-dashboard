@@ -37,52 +37,52 @@ if ($vcode == 1) {
         echo '<td id=' . $i . $j . '>' . $info['info'][$i]['hostname'] . '</td>';
         $j++;
         if ($info['info'][$i]['nginx'] == '1') {
-            echo '<td item="nginx" class="service" id=' . $i . $j . ' bgcolor="green" ip=' . $info['info'][$i]['ipv4'] . '>running</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="nginx" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' checked/><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         } elseif ($info['info'][$i]['nginx'] == '10') {
-            echo '<td item="nginx" class="service" id=' . $i . $j . ' bgcolor="yellow" ip=' . $info['info'][$i]['ipv4'] . '>close</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="nginx" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' disabled/><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         } elseif ($info['info'][$i]['nginx'] == '11') {
-            echo '<td item="nginx" class="service" id=' . $i . $j . ' bgcolor="yellow" ip=' . $info['info'][$i]['ipv4'] . '>opening</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="nginx" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' checked disabled/><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         } else {
-            echo '<td item="nginx" class="service" id=' . $i . $j . ' bgcolor="red" ip=' . $info['info'][$i]['ipv4'] . '>deaded</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="nginx" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' /><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         }
 
         if ($info['info'][$i]['phpfpm'] == '1') {
-            echo '<td item="phpfpm" class="service" id=' . $i . $j . ' bgcolor="green" ip=' . $info['info'][$i]['ipv4'] . '>running</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="phpfpm" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' checked/><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         } elseif ($info['info'][$i]['phpfpm'] == '10') {
-            echo '<td item="phpfpm" class="service" id=' . $i . $j . ' bgcolor="yellow" ip=' . $info['info'][$i]['ipv4'] . '>close</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="phpfpm" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' disabled/><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         } elseif ($info['info'][$i]['phpfpm'] == '11') {
-            echo '<td item="phpfpm" class="service" id=' . $i . $j . ' bgcolor="yellow" ip=' . $info['info'][$i]['ipv4'] . '>opening</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="phpfpm" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' checked disabled/><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         } else {
-            echo '<td item="phpfpm" class="service" id=' . $i . $j . ' bgcolor="red" ip=' . $info['info'][$i]['ipv4'] . '>deaded</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="phpfpm" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' /><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         }
 
         if ($info['info'][$i]['mysql'] == '1') {
-            echo '<td item="mysql" class="service" id=' . $i . $j . ' bgcolor="green" ip=' . $info['info'][$i]['ipv4'] . '>running</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="mysql" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' checked/><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         } elseif ($info['info'][$i]['mysql'] == '10') {
-            echo '<td item="mysql" class="service" id=' . $i . $j . ' bgcolor="yellow" ip=' . $info['info'][$i]['ipv4'] . '>close</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="mysql" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' disables/><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         } elseif ($info['info'][$i]['mysql'] == '11') {
-            echo '<td item="mysql" class="service" id=' . $i . $j . ' bgcolor="yellow" ip=' . $info['info'][$i]['ipv4'] . '>opening</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="mysql" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' checked disabled/><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         } else {
-            echo '<td item="mysql" class="service" id=' . $i . $j . ' bgcolor="red" ip=' . $info['info'][$i]['ipv4'] . '>deaded</td>';
+            echo '<td><label class="mdui-switch"><input type="checkbox" item="mysql" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' /><i class="mdui-switch-icon"></i></label></td>';
             $j++;
         }
 
         if ($info['info'][$i]['Nupdate'] == '1') {
-            echo '<td item="Nupdate" class="service" id=' . $i . $j . ' bgcolor="green" ip=' . $info['info'][$i]['ipv4'] . '>UPGRADE</td>';
+            echo '<td><button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" item="Nupdate" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . '>UPGRADE</button></td>';
             $j++;
         } else {
-            echo '<td item="Nupdate" class="service" id=' . $i . $j . ' bgcolor="gray" ip=' . $info['info'][$i]['ipv4'] . '>UPGRADING</td>';
+            echo '<td><button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" item="Nupdate" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' checked disabled>UPGRADING</button></td>';
             $j++;
         }
     }
