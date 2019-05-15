@@ -22,6 +22,23 @@ $('input.service').click(function () {
         });
     }
 });
+
+$('button.service').click(function () {
+    hitpoint = this;
+
+    $.ajax({
+        url: 'api.php',
+        method: 'GET',
+        data: { do: 'repo', ipv4: this.attributes['2'].nodeValue, key: this.attributes['1'].nodeValue, value: '10', secret: document.getElementById('nonediv').innerHTML },
+        success: function () {
+            hitpoint['innerText'] = 'UPGRADING';
+            hitpoint.disabled = true;
+        }
+    });
+});
+
+
+
 var msg = 0;
 var status = 0;
 function checkUpdate() {
@@ -102,5 +119,5 @@ function checkUpdate() {
 const timeId = setInterval(() => {
     if (true) {
         clearInterval(this.timeId)
-    }; if(status==0){checkUpdate()};
+    }; if (status == 0) { checkUpdate() };
 }, 3000)
