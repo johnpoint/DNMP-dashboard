@@ -25,10 +25,6 @@ $('td.service').click(function () {
 var msg = 0;
 var status = 0;
 function checkUpdate() {
-    if (status == 1) {
-        return 0
-    }
-    status = 1;
     $.ajax({
         url: 'api.php',
         method: 'GET',
@@ -99,11 +95,10 @@ function checkUpdate() {
             }
         }
     });
-    status = 0;
 };
 
 const timeId = setInterval(() => {
     if (true) {
         clearInterval(this.timeId)
-    }; checkUpdate();
+    }; if(status==0){checkUpdate()};
 }, 3000)
