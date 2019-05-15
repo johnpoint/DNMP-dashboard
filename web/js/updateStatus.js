@@ -25,6 +25,7 @@ $('td.service').click(function () {
 var msg = 0;
 var status = 0;
 function checkUpdate() {
+    status = 1;
     $.ajax({
         url: 'api.php',
         method: 'GET',
@@ -93,6 +94,7 @@ function checkUpdate() {
 
                 }
             }
+            status = 0;
         }
     });
 };
