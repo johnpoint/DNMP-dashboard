@@ -4,7 +4,7 @@ $('input.service').click(function () {
         $.ajax({
             url: 'api.php',
             method: 'GET',
-            data: { do: 'repo', ipv4: this.attributes['4'].nodeValue, key: this.attributes['0'].nodeValue, value: '10', secret: document.getElementById('nonediv').innerHTML },
+            data: { do: 'repo', ipv4: this.attributes['4'].nodeValue, key: this.attributes['1'].nodeValue, value: '10', secret: document.getElementById('nonediv').innerHTML },
             success: function () {
                 hitpoint.checked = false;
                 hitpoint.disabled = true;
@@ -14,7 +14,7 @@ $('input.service').click(function () {
         $.ajax({
             url: 'api.php',
             method: 'GET',
-            data: { do: 'repo', ipv4: this.attributes['4'].nodeValue, key: this.attributes['0'].nodeValue, value: '11', secret: document.getElementById('nonediv').innerHTML },
+            data: { do: 'repo', ipv4: this.attributes['4'].nodeValue, key: this.attributes['1'].nodeValue, value: '11', secret: document.getElementById('nonediv').innerHTML },
             success: function () {
                 hitpoint.checked = true;
                 hitpoint.disabled = true;
