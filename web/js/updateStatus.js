@@ -99,6 +99,7 @@ function checkUpdate() {
             }
         }
     });
+    status = 0;
 };
 
 const timeId = setInterval(() => {
