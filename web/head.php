@@ -10,7 +10,7 @@
     <script src="https://cdn.bootcss.com/mdui/0.4.2/js/mdui.min.js"></script>
     <script src="//cdn.lvcshu.info/js/anti-360browser.js"></script>
     <script
-            src="//cdn.lvcshu.info/js/jq/jquery-3.3.1.min.js"
+            src="//code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
     <title>服务器管理</title>
