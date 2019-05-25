@@ -79,10 +79,10 @@ if ($vcode == 1) {
         }
 
         if ($info['info'][$i]['Nupdate'] == '1') {
-            echo '<td><button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" item="Nupdate" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . '>UPGRADE</button></td>';
+            echo '<td><button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent service" item="Nupdate" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . '>UPGRADE</button></td>';
             $j++;
         } else {
-            echo '<td><button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" item="Nupdate" class="service" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' checked disabled>UPGRADING</button></td>';
+            echo '<td><button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent service" item="Nupdate" id=' . $i . $j . '  ip=' . $info['info'][$i]['ipv4'] . ' checked disabled>UPGRADING</button></td>';
             $j++;
         }
     }
