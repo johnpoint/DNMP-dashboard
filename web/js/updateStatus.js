@@ -29,7 +29,7 @@ $('button.service').click(function () {
     $.ajax({
         url: 'api.php',
         method: 'GET',
-        data: { do: 'repo', ipv4: this.attributes['2'].nodeValue, key: this.attributes['1'].nodeValue, value: '10', secret: document.getElementById('nonediv').innerHTML },
+        data: { do: 'repo', ipv4: this.attributes['3'].nodeValue, key: this.attributes['1'].nodeValue, value: '10', secret: document.getElementById('nonediv').innerHTML },
         success: function () {
             hitpoint['innerText'] = 'UPGRADING';
             hitpoint.disabled = true;
