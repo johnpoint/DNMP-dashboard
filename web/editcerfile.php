@@ -10,7 +10,7 @@ if ($vcode == 1) {
       <div class="mdui-typo">';
     echo'
     <div class="mdui-textfield">
-        <textarea class="mdui-textfield-input" rows="20" placeholder='.$_GET['file'].'>'.fread($myfile, filesize($dir)).'</textarea>
+        <textarea class="mdui-textfield-input" rows="20" placeholder='.$_GET['file'].'>'.fread($myfile, filesize($_GET['file'])).'</textarea>
     </div></div>/div>/div>';
     fclose($myfile);
 }else {
