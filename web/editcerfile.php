@@ -14,10 +14,9 @@ if ($vcode == 1) {
     </div>
     <form action="upload.php'.'?file='.$_GET['file'].'" method="post"
 enctype="multipart/form-data">
-<label for="file">Filename:</label>
-<input type="file" name="file" id="file" /> 
+<input type="file" name="file" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" id="file" /> 
 <br />
-<input type="submit" name="submit" value="Submit" />
+<input type="upload" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" name="submit" value="Submit" />
 </form>
     </div></div></div>';
     fclose($myfile);
