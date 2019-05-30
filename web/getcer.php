@@ -26,7 +26,7 @@ if ($vcode == 1) {
                             echo '<div class="mdui-panel-item-body">';
                             echo '<pre> curl https://center.lvcshu.com/getcerfile.php?secret=' . settingsDbEdit('view', 'secret', NULL, NULL) . '&fulldir=' . $dir . '/' . $myfile . $file . ' > $file </pre>';
                             echo "<a href=" . '\'https://center.lvcshu.com/getcerfile.php?secret=' . settingsDbEdit('view', 'secret', NULL, NULL) . '&fulldir=' . $dir . '/' . $myfile . $file . "'" . 'class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">View</a>';
-                            echo "<a href=" . "'https://center.lvcshu.com/editcerfile.php?file=" . $myfile . $file . ' class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">Edit</a>';
+                            echo "<a href=" . "'https://center.lvcshu.com/editcerfile.php?file=" . $myfile . $file ."'". ' class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">Edit</a>';
                             echo '</div></div>';
                         }
                     }
