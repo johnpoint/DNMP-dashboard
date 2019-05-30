@@ -11,7 +11,15 @@ if ($vcode == 1) {
     echo'
     <div class="mdui-textfield">
         <textarea class="mdui-textfield-input" rows="20" placeholder='.$_GET['file'].' disabled>'.fread($myfile, filesize($_GET['file'])).'</textarea>
-    </div></div></div></div>';
+    </div>
+    <form action="upload_file.php'.'?file='.$_GET['file'].'" method="post"
+enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file" /> 
+<br />
+<input type="submit" name="submit" value="Submit" />
+</form>
+    </div></div></div>';
     fclose($myfile);
 }else {
     exit;
