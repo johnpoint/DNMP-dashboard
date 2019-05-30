@@ -11,7 +11,7 @@ if ($vcode == 1) {
     echo'
     <div class="mdui-textfield">
         <textarea class="mdui-textfield-input" rows="20" placeholder='.$_GET['file'].'>'.fread($myfile, filesize($_GET['file'])).'</textarea>
-    </div></div>/div>/div>';
+    </div></div></div></div>';
     fclose($myfile);
 }else {
     exit;
