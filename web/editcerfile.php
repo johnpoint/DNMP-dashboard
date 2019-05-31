@@ -5,7 +5,7 @@ include_once 'func.php';
 if ($vcode == 1) {
     $myfile = fopen($_GET['file'], "r") or die("Unable to open file!");
     echo '<div class="mdui-container doc-container doc-no-cover">
-    <h1 class="doc-title mdui-text-color-theme">服务器管理面板 - 证书编辑</h1>
+    <h1 class="doc-title mdui-text-color-theme">服务器管理面板 - 证书更新</h1>
     <div class="doc-chapter">
       <div class="mdui-typo">';
     echo'

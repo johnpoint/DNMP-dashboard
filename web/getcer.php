@@ -24,7 +24,7 @@ if ($vcode == 1) {
                             echo '<div class="mdui-panel-item">';
                             echo '<div class="mdui-panel-item-header">' . '<div class="mdui-panel-item-title">' . $file . '</div>' . '<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>' . '</div>';
                             echo '<div class="mdui-panel-item-body">';
-                            echo '<pre> curl https://center.lvcshu.com/getcerfile.php?secret=' . settingsDbEdit('view', 'secret', NULL, NULL) . '&fulldir=' . $dir . '/' . $myfile . $file . ' > $file </pre>';
+                            echo '<pre> curl https://center.lvcshu.com/getcerfile.php?secret=' . settingsDbEdit('view', 'secret', NULL, NULL) . '&fulldir=' . $dir . '/' . $myfile . $file . ' > '. $myfile . $file .' </pre>';
                             echo "<a href=" . '\'https://center.lvcshu.com/getcerfile.php?secret=' . settingsDbEdit('view', 'secret', NULL, NULL) . '&fulldir=' . $dir . '/' . $myfile . $file . "'" . 'class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">View</a>';
                             echo "&nbsp&nbsp<a href=" . "'https://center.lvcshu.com/?page=editcerfile&file=" . $dir . '/' .$myfile . $file ."'". ' class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">Edit</a>';
                             echo '</div></div>';
