@@ -17,7 +17,7 @@ enctype="multipart/form-data">
 <label for="file">Filename:</label>
 <input type="file" name="file" id="file" /> 
 <br />
-<input type="upload" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" name="submit" value="Submit" />
+<input type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" name="submit" value="Submit" />
 </form>
     </div></div></div>';
     fclose($myfile);
